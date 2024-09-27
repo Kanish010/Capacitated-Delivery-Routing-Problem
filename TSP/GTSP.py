@@ -58,12 +58,6 @@ def extract_route(model, x, location_names):
                     break
     return route
 
-def save_route_to_csv(route, filename="optimal_route.csv"):
-    """Save the optimal route to a CSV file."""
-    df = pd.DataFrame({'Location': route})
-    df.to_csv(filename, index=False)
-    print(f"Optimal route saved to {filename}")
-
 def visualize_route(route, locations, output_filename="TSP/gtsp_singapore.html"):
     map_center = locations[route[0]]  # Use the first location in the route
     
@@ -89,29 +83,18 @@ def visualize_route(route, locations, output_filename="TSP/gtsp_singapore.html")
     return route_map
 
 def main():
-    # Load locations from CSV file
     file_path = 'SGLocations/Sg_Locations.csv'
     locations = load_locations_from_csv(file_path)
     
-    # Get location names and coordinates
     location_names = list(locations.keys())
     coords = list(locations.values())
     n = len(location_names)
 
-    # Step 1: Calculate distance matrix
     dist_matrix = calculate_distance_matrix(coords)
-
-    # Step 2: Setup and solve the MTZ model
     model, x = setup_model(n, dist_matrix)
     model.optimize()
-
-    # Step 3: Extract the optimal route
     route = extract_route(model, x, location_names)
 
-    # Step 4: Save the optimal route to a CSV file
-    save_route_to_csv(route, filename="TSP/optimal_route.csv")
-
-    # Step 5: Visualize and save the route
     print("Optimal route:")
     print(" -> ".join(route))
     visualize_route(route, locations)
