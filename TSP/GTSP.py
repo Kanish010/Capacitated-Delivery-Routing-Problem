@@ -50,18 +50,21 @@ def extract_route(model, x, location_names):
         start = 0  # Starting point
         route.append(location_names[start])
         next_loc = start
-        while len(route) < len(location_names):
+        while len(route) < len(location_names) + 1:  # +1 to include return to start
             for j in range(len(location_names)):
                 if solution[next_loc, j] > 0.5:
                     route.append(location_names[j])
                     next_loc = j
                     break
-        route.append(location_names[start])  # Return to start
     return route
 
-def visualize_route(route, locations, output_filename="TravellingSalesMan/gtsp_singapore.html"):
-    """Visualize the route using Folium and save it to an HTML file."""
-    # Dynamically set the map center to the first location in the optimal route
+def save_route_to_csv(route, filename="optimal_route.csv"):
+    """Save the optimal route to a CSV file."""
+    df = pd.DataFrame({'Location': route})
+    df.to_csv(filename, index=False)
+    print(f"Optimal route saved to {filename}")
+
+def visualize_route(route, locations, output_filename="TSP/gtsp_singapore.html"):
     map_center = locations[route[0]]  # Use the first location in the route
     
     # Create the map centered at the first location
@@ -105,7 +108,10 @@ def main():
     # Step 3: Extract the optimal route
     route = extract_route(model, x, location_names)
 
-    # Step 4: Visualize and save the route
+    # Step 4: Save the optimal route to a CSV file
+    save_route_to_csv(route, filename="TSP/optimal_route.csv")
+
+    # Step 5: Visualize and save the route
     print("Optimal route:")
     print(" -> ".join(route))
     visualize_route(route, locations)
