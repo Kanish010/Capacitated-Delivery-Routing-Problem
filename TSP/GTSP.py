@@ -3,6 +3,7 @@ from gurobipy import GRB
 import math
 import folium
 import pandas as pd
+import csv
 
 # Load locations from CSV
 def load_locations_from_csv(file_path):
@@ -82,8 +83,20 @@ def visualize_route(route, locations, output_filename="TSP/gtsp_singapore.html")
     print(f"Route map saved as {output_filename}")
     return route_map
 
+def save_route_to_csv(route, locations, file_path='TSP/optimal_route.csv'):
+    """Save the optimal route to a CSV file with the same format as the original SG_locations file."""
+    with open(file_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        # Write header
+        writer.writerow(['Location', 'Latitude', 'Longitude'])
+        # Write each location's data
+        for location in route:
+            lat, lon = locations[location]
+            writer.writerow([location, lat, lon])
+    print(f"Optimal route saved to {file_path}")
+
 def main():
-    file_path = 'SGLocations/Sg_Locations.csv'
+    file_path = 'SGLocations/Sg_locations.csv'
     locations = load_locations_from_csv(file_path)
     
     location_names = list(locations.keys())
@@ -97,6 +110,11 @@ def main():
 
     print("Optimal route:")
     print(" -> ".join(route))
+
+    # Save the optimal route to CSV with the same format as SG_locations.csv
+    save_route_to_csv(route, locations)
+
+    # Visualize the route
     visualize_route(route, locations)
 
 if __name__ == "__main__":
