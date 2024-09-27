@@ -83,16 +83,16 @@ def visualize_route(route, locations, output_filename="TSP/gtsp_singapore.html")
     print(f"Route map saved as {output_filename}")
     return route_map
 
-def save_route_to_csv(route, locations, file_path='TSP/optimal_route.csv'):
-    """Save the optimal route to a CSV file with the same format as the original SG_locations file."""
+def save_route_to_csv(route, locations, file_path='TSP/Animation/optimal_route.csv'):
+    """Save the optimal route to a CSV file with an additional 'Node' column."""
     with open(file_path, mode='w', newline='') as file:
         writer = csv.writer(file)
         # Write header
-        writer.writerow(['Location', 'Latitude', 'Longitude'])
-        # Write each location's data
-        for location in route:
+        writer.writerow(['Node', 'Location', 'Latitude', 'Longitude'])
+        # Write each location's data with node labels
+        for idx, location in enumerate(route):
             lat, lon = locations[location]
-            writer.writerow([location, lat, lon])
+            writer.writerow([f'Node {idx + 1}', location, lat, lon])
     print(f"Optimal route saved to {file_path}")
 
 def main():
