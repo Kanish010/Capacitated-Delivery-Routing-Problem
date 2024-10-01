@@ -14,10 +14,6 @@ def normalize_coordinates(lat, lon, min_lat, max_lat, min_lon, max_lon, zoom_fac
 
 class SingaporeTSPAnimation(Scene):
     def construct(self):
-        # Title
-        title = Text("Optimal TSP Route in Singapore").scale(0.75).to_edge(UP)
-        self.play(Write(title))
-        
         # Extract latitude and longitude values
         latitudes = locations_df["Latitude"]
         longitudes = locations_df["Longitude"]
