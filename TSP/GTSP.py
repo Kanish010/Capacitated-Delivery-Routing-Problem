@@ -96,7 +96,7 @@ def save_route_to_csv(route, locations, file_path='TSP/Animation/optimal_route.c
     print(f"Optimal route saved to {file_path}")
 
 def main():
-    file_path = 'SGLocations/Sg_locations.csv'
+    file_path = 'SGLocations/TSP_locations.csv'
     locations = load_locations_from_csv(file_path)
     
     location_names = list(locations.keys())
