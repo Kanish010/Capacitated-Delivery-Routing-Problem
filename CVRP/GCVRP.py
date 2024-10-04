@@ -176,7 +176,7 @@ def plot_routes_on_map(routes, locations_df):
 # Function to run everything
 def main():
     # Parameters
-    num_vehicles = 2  # Adjust as needed (this can be changed dynamically)
+    num_vehicles = 5  # Adjust as needed (this can be changed dynamically)
     depot = 0  # First location as the depot
 
     # Calculate the distance matrix

@@ -1,4 +1,5 @@
 Location,Latitude,Longitude,Demand
+NEX Mall,1.3508,103.8724,11
 Marina Bay Sands,1.2834,103.8607,0
 Gardens by the Bay,1.2816,103.8636,8
 Singapore Flyer,1.2893,103.8631,17
@@ -10,7 +11,6 @@ Clarke Quay,1.2906,103.8465,9
 VivoCity,1.2649,103.8238,11
 ION Orchard,1.304,103.8318,14
 Jewel Changi Airport,1.3604,103.9892,7
-NEX Mall,1.3508,103.8724,11
 Woodlands Waterfront Park,1.451,103.7695,15
 Bukit Batok Nature Park,1.356,103.7639,15
 Seletar Aerospace Park,1.4176,103.867,12

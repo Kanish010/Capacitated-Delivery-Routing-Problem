@@ -1,18 +1,21 @@
 Location,Latitude,Longitude,Demand,Car_Number
-Marina Bay Sands,1.2834,103.8607,0,1
-Marina Bay Sands,1.2834,103.8607,0,2
-Gardens by the Bay,1.2816,103.8636,8,1
-Singapore Flyer,1.2893,103.8631,17,1
-Orchard Road,1.3048,103.8318,19,1
-Sentosa Island,1.2494,103.8303,15,1
-Singapore Zoo,1.4043,103.793,12,2
-Changi Airport,1.3644,103.9915,17,2
-Clarke Quay,1.2906,103.8465,9,1
-VivoCity,1.2649,103.8238,11,1
-ION Orchard,1.304,103.8318,14,1
-Jewel Changi Airport,1.3604,103.9892,7,2
+NEX Mall,1.3508,103.8724,11,1
 NEX Mall,1.3508,103.8724,11,2
-Woodlands Waterfront Park,1.451,103.7695,15,2
-Bukit Batok Nature Park,1.356,103.7639,15,2
-Seletar Aerospace Park,1.4176,103.867,12,2
-IMM Mall,1.3336,103.7445,9,2
+NEX Mall,1.3508,103.8724,11,3
+NEX Mall,1.3508,103.8724,11,4
+NEX Mall,1.3508,103.8724,11,5
+Marina Bay Sands,1.2834,103.8607,0,5
+Gardens by the Bay,1.2816,103.8636,8,5
+Singapore Flyer,1.2893,103.8631,17,5
+Orchard Road,1.3048,103.8318,19,4
+Sentosa Island,1.2494,103.8303,15,5
+Singapore Zoo,1.4043,103.793,12,3
+Changi Airport,1.3644,103.9915,17,2
+Clarke Quay,1.2906,103.8465,9,5
+VivoCity,1.2649,103.8238,11,5
+ION Orchard,1.304,103.8318,14,4
+Jewel Changi Airport,1.3604,103.9892,7,2
+Woodlands Waterfront Park,1.451,103.7695,15,3
+Bukit Batok Nature Park,1.356,103.7639,15,3
+Seletar Aerospace Park,1.4176,103.867,12,1
+IMM Mall,1.3336,103.7445,9,3
