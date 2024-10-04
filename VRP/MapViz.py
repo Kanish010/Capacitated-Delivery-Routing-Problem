@@ -4,7 +4,7 @@ import folium
 
 # Load the routes and vehicle assignments from the CSV
 locations_df = pd.read_csv("SGLocations/VRP_locations.csv")
-routes_df = pd.read_csv("VRP/locations_with_vehicle_assignment.csv")
+routes_df = pd.read_csv("VRP/Animation/optimal_routes.csv")
 
 # Function to plot routes on a Folium map
 def plot_routes_on_map(routes_df, locations_df):

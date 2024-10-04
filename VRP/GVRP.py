@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from gurobipy import Model, GRB, quicksum
 
-# Load the distance matrix from your CSV file (assuming you saved it as a DataFrame)
 locations_df = pd.read_csv("SGLocations/VRP_locations.csv")
 
 # Function to calculate Euclidean distance based on latitude and longitude
@@ -124,8 +123,8 @@ def save_routes_as_csv(routes, locations_df):
             })
 
     route_df = pd.DataFrame(route_data)
-    route_df.to_csv("VRP/locations_with_vehicle_assignment.csv", index=False)
-    print("Optimal routes saved to 'locations_with_vehicle_assignment.csv'.")
+    route_df.to_csv("VRP/Animation/optimal_routes.csv", index=False)
+    print("Optimal routes saved to 'optimal_routes.csv'.")
 
 # Function to run everything
 def main():
